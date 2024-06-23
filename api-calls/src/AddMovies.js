@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Addmovies.css";
 
-const AddMovies = () => {
+const AddMovies = (props) => {
   const [title, setTitle] = useState("");
   const [openingText, setOpeningText] = useState("");
   const [releaseDate, setReleaseDate] = useState("");
@@ -14,7 +14,8 @@ const AddMovies = () => {
       openingText: openingText,
       releaseDate: releaseDate,
     };
-    console.log(movie);
+    //console.log(movie);
+    props.onAddMovie(movie);
     setTitle("");
     setOpeningText("");
     setReleaseDate("");
